@@ -37,15 +37,14 @@ about:
   doc_url: https://github.com/JannesSP/read5.github.io
   dev_url: {{ data['url'] }}
   description: |
-    Read5_ont is a python wrapper to read fast5 and pod5 files using the same overloaded functions from different APIs.
+    [**Read5_ont**](https://github.com/JannesSP/read5_ont) is a python wrapper to read fast5 and pod5 files using the same overloaded functions from different APIs. ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/read5_ont)
 
     [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-teal.svg)](https://www.gnu.org/licenses/gpl-3.0)
-    ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/read5)
 
-    [![PyPI](https://img.shields.io/pypi/v/read5) ![PyPI - Downloads](https://img.shields.io/pypi/dm/read5) ![PyPI - Status](https://img.shields.io/pypi/status/read5)](https://pypi.org/project/read5/)
+    [![PyPI](https://img.shields.io/pypi/v/read5) ![PyPI - Downloads](https://img.shields.io/pypi/dm/read5_ont) ![PyPI - Status](https://img.shields.io/pypi/status/read5_ont)](https://pypi.org/project/read5_ont/)
 
 
-    [![Anaconda-Server Badge](https://anaconda.org/jannessp/read5/badges/version.svg)](https://anaconda.org/jannessp/read5) ![Conda](https://img.shields.io/conda/dn/jannessp/read5) [![Conda package](https://anaconda.org/jannessp/read5/badges/latest_release_date.svg)](https://anaconda.org/jannessp/read5) [![Conda package](https://anaconda.org/jannessp/read5/badges/platforms.svg)](https://anaconda.org/jannessp/read5)
+    [![Anaconda-Server Badge](https://anaconda.org/jannessp/read5/badges/version.svg)](https://anaconda.org/jannessp/read5_ont) ![Conda](https://img.shields.io/conda/dn/jannessp/read5_ont) [![Conda package](https://anaconda.org/jannessp/read5_ont/badges/latest_release_date.svg)](https://anaconda.org/jannessp/read5_ont) [![Conda package](https://anaconda.org/jannessp/read5_ont/badges/platforms.svg)](https://anaconda.org/jannessp/read5_ont)
     
     [![DOI](https://zenodo.org/badge/633012569.svg)](https://zenodo.org/badge/latestdoi/633012569)
 
@@ -63,16 +62,10 @@ about:
     pip install read5_ont
     ```
     ### Conda
-    Pod5 is currently not available via conda (27.06.2023). Please install it using pip in your conda environment.
+    Pod5 is now available via [conda](https://anaconda.org/jannessp/pod5) (19.07.2023).
+
     ```bash
-    conda install mamba
     mamba create -n read5_ont -c jannessp read5_ont
-    conda activate read5_ont
-    ```
-    Alternatively you can create the environment using the [conda.recipe/env.yml](conda.recipe/env.yml) file.
-    ```bash
-    conda install mamba
-    mamba env create -f conda.recipe/env.yml
     conda activate read5_ont
     ```
     ___
@@ -80,14 +73,14 @@ about:
 
     [Click here to see a full documentation about the classes and function.](https://jannessp.github.io/read5.github.io/)
 
-    *my_file* can be a fast5 or pod5 file. The wrapper detects the file format depending on the file extension.
+    *my_file* can be a fast5, slow5, blow5 or pod5 file. The wrapper detects the file format depending on the file extension.
 
     ### Small example:
 
     ```python
     from read5 import read # or from read5.Reader import read
 
-    r5 = read(my_file) # file with on of these extensions: .fast5, .pod5
+    r5 = read(my_file) # file with on of these extensions: .fast5, .slow5, .blow5, .pod5
     for readid in r5:
         signal = r5.getSignal(readid) # returns raw integer values stored in the file
         pA_signal = r5.getpASignal(readid) # returns pA signal
@@ -104,6 +97,7 @@ about:
 
     ```python
     from read5.Fast5Reader import Fast5Reader # contains the Fast5 Reader class
+    from read5.Slow5Reader import Slow5Reader # contains the Slow5 Reader class - !not available in read5_ont!
     from read5.Pod5Reader import Pod5Reader # contains the Pod5 Reader class
     ```
 
@@ -119,7 +113,7 @@ about:
     from read5.Exceptions import UnknownFileFormatException, UnknownNormalizationMode
     ```
 
-    - UnknownFileFormatException: is raised, when the file extension does not match one of ['.fast5', '.pod5']
+    - UnknownFileFormatException: is raised, when the file extension does not match one of ['.fast5', '.slow5', '.blow5', '.pod5'] (or ['.fast5', '.pod5'] in **read5_ont**)
     - UnknownNormalizationMode: is raised, when an unknown mode is provided for the signal normalization function
 
     ## Full Documentation

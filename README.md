@@ -5,10 +5,10 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-teal.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-[![PyPI](https://img.shields.io/pypi/v/read5) ![PyPI - Downloads](https://img.shields.io/pypi/dm/read5) ![PyPI - Status](https://img.shields.io/pypi/status/read5)](https://pypi.org/project/read5/)
+[![PyPI](https://img.shields.io/pypi/v/read5) ![PyPI - Downloads](https://img.shields.io/pypi/dm/read5_ont) ![PyPI - Status](https://img.shields.io/pypi/status/read5_ont)](https://pypi.org/project/read5_ont/)
 
 
-[![Anaconda-Server Badge](https://anaconda.org/jannessp/read5/badges/version.svg)](https://anaconda.org/jannessp/read5) ![Conda](https://img.shields.io/conda/dn/jannessp/read5) [![Conda package](https://anaconda.org/jannessp/read5/badges/latest_release_date.svg)](https://anaconda.org/jannessp/read5) [![Conda package](https://anaconda.org/jannessp/read5/badges/platforms.svg)](https://anaconda.org/jannessp/read5)
+[![Anaconda-Server Badge](https://anaconda.org/jannessp/read5/badges/version.svg)](https://anaconda.org/jannessp/read5_ont) ![Conda](https://img.shields.io/conda/dn/jannessp/read5_ont) [![Conda package](https://anaconda.org/jannessp/read5_ont/badges/latest_release_date.svg)](https://anaconda.org/jannessp/read5_ont) [![Conda package](https://anaconda.org/jannessp/read5_ont/badges/platforms.svg)](https://anaconda.org/jannessp/read5_ont)
  
 [![DOI](https://zenodo.org/badge/633012569.svg)](https://zenodo.org/badge/latestdoi/633012569)
 
@@ -23,26 +23,14 @@ ___
 
 ### Pypi/pip
 ```bash
-pip install read5
-# or
 pip install read5_ont
 ```
 ### Conda
 Pod5 is now available via [conda](https://anaconda.org/jannessp/pod5) (19.07.2023).
 
 ```bash
-conda install mamba
-mamba create -n read5 -c jannessp read5
-conda activate read5
-# or
 mamba create -n read5_ont -c jannessp read5_ont
 conda activate read5_ont
-```
-Alternatively you can create the environment using the [conda.recipe/env.yml](conda.recipe/env.yml) file.
-```bash
-conda install mamba
-mamba env create -f conda.recipe/env.yml
-conda activate read5
 ```
 ___
 ## Usage
