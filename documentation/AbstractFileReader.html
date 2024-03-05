@@ -3,21 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.8.1" />
-<title>read5.AbstractFileReader API documentation</title>
+<meta name="generator" content="pdoc 0.10.0" />
+<title>read5_ont.AbstractFileReader API documentation</title>
 <meta name="description" content="" />
-<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
 <style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
 </head>
 <body>
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>read5.AbstractFileReader</code></h1>
+<h1 class="title">Module <code>read5_ont.AbstractFileReader</code></h1>
 </header>
 <section id="section-intro">
 <details class="source">
@@ -32,7 +34,7 @@
 
 from abc import abstractmethod
 import numpy as np
-from read5.Exceptions import UnknownNormalizationMode
+from read5_ont.Exceptions import UnknownNormalizationMode
 
 class AbstractFileReader():
     &#39;&#39;&#39;
@@ -324,7 +326,7 @@ class AbstractFileReader():
     def getEndReason(self, readid : str) -&gt; int:
         &#39;&#39;&#39;
         Available since FAST5 v2.2
-        ATTENTION: End Reason encoding differs: fast5/slow5/blow5 vs pod5!
+        ATTENTION: End Reason encoding differs: fast5 vs pod5!
 
         Returns
         -------
@@ -998,6 +1000,32 @@ class AbstractFileReader():
         &#39;&#39;&#39;
         return (self.getpASignal(readid) - self.getShift(readid, mode)) / self.getScale(readid, mode)
     
+    def getPolyAStandardizedSignal(self, readid : str, polyAstart : int, polyAend : int) -&gt; np.ndarray:
+        &#39;&#39;&#39;
+        Standardize the read signal of the provided read with the polyA.
+        This function uses the median and mad to standardize the read with the polyA signal.
+        After standardization the polyA signal will have a mean of 108.901413 and a stdev of 2.676522.
+        
+        Parameter
+        ---------
+        readid : str
+        polyAstart : int
+            included starting index of the polyA signal in the read
+        polyAend : int
+            excluded ending index of the polyA signal in the read
+
+        Returns
+        -------
+        standardizedSignal : np.ndarray
+            polyA standardized read signal
+        &#39;&#39;&#39;
+        stdPolyAMean = 108.901413
+        stdPolyAStdev = 2.676522
+        polyAsignal = self.getpASignal(readid)[polyAstart : polyAend]
+        polyAmedian = np.median(polyAsignal)
+        polyAmad = 1.4826 * np.median(np.abs(polyAsignal - polyAmedian))
+        return ((self.getpASignal(readid) - polyAmedian) / polyAmad) * stdPolyAStdev + stdPolyAMean
+
     def getStartTimeInMinutes(self, readid) -&gt; float:
         &#39;&#39;&#39;
         Parameter
@@ -1009,7 +1037,15 @@ class AbstractFileReader():
         startTime : int
             start of sequencing converted to minutes after sequencing start
         &#39;&#39;&#39;
-        return self.getStartTime(readid) / self.getSamplingRate(readid) / 60</code></pre>
+        return self.getStartTime(readid) / self.getSamplingRate(readid) / 60
+    
+    def getFilePath(self) -&gt; str:
+        &#39;&#39;&#39;
+        Returns
+        -------
+        filepath : str
+        &#39;&#39;&#39;
+        return self._filepath</code></pre>
 </details>
 </section>
 <section>
@@ -1021,7 +1057,7 @@ class AbstractFileReader():
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="read5.AbstractFileReader.AbstractFileReader"><code class="flex name class">
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader"><code class="flex name class">
 <span>class <span class="ident">AbstractFileReader</span></span>
 <span>(</span><span>filepath: str)</span>
 </code></dt>
@@ -1331,7 +1367,7 @@ class AbstractFileReader():
     def getEndReason(self, readid : str) -&gt; int:
         &#39;&#39;&#39;
         Available since FAST5 v2.2
-        ATTENTION: End Reason encoding differs: fast5/slow5/blow5 vs pod5!
+        ATTENTION: End Reason encoding differs: fast5 vs pod5!
 
         Returns
         -------
@@ -2005,6 +2041,32 @@ class AbstractFileReader():
         &#39;&#39;&#39;
         return (self.getpASignal(readid) - self.getShift(readid, mode)) / self.getScale(readid, mode)
     
+    def getPolyAStandardizedSignal(self, readid : str, polyAstart : int, polyAend : int) -&gt; np.ndarray:
+        &#39;&#39;&#39;
+        Standardize the read signal of the provided read with the polyA.
+        This function uses the median and mad to standardize the read with the polyA signal.
+        After standardization the polyA signal will have a mean of 108.901413 and a stdev of 2.676522.
+        
+        Parameter
+        ---------
+        readid : str
+        polyAstart : int
+            included starting index of the polyA signal in the read
+        polyAend : int
+            excluded ending index of the polyA signal in the read
+
+        Returns
+        -------
+        standardizedSignal : np.ndarray
+            polyA standardized read signal
+        &#39;&#39;&#39;
+        stdPolyAMean = 108.901413
+        stdPolyAStdev = 2.676522
+        polyAsignal = self.getpASignal(readid)[polyAstart : polyAend]
+        polyAmedian = np.median(polyAsignal)
+        polyAmad = 1.4826 * np.median(np.abs(polyAsignal - polyAmedian))
+        return ((self.getpASignal(readid) - polyAmedian) / polyAmad) * stdPolyAStdev + stdPolyAMean
+
     def getStartTimeInMinutes(self, readid) -&gt; float:
         &#39;&#39;&#39;
         Parameter
@@ -2016,18 +2078,25 @@ class AbstractFileReader():
         startTime : int
             start of sequencing converted to minutes after sequencing start
         &#39;&#39;&#39;
-        return self.getStartTime(readid) / self.getSamplingRate(readid) / 60</code></pre>
+        return self.getStartTime(readid) / self.getSamplingRate(readid) / 60
+    
+    def getFilePath(self) -&gt; str:
+        &#39;&#39;&#39;
+        Returns
+        -------
+        filepath : str
+        &#39;&#39;&#39;
+        return self._filepath</code></pre>
 </details>
 <h3>Subclasses</h3>
 <ul class="hlist">
-<li><a title="read5.Fast5Reader.Fast5Reader" href="Fast5Reader.html#read5.Fast5Reader.Fast5Reader">Fast5Reader</a></li>
-<li><a title="read5.Pod5Reader.Pod5Reader" href="Pod5Reader.html#read5.Pod5Reader.Pod5Reader">Pod5Reader</a></li>
-<li><a title="read5.Slow5Reader.Slow5Reader" href="Slow5Reader.html#read5.Slow5Reader.Slow5Reader">Slow5Reader</a></li>
+<li><a title="read5_ont.Fast5Reader.Fast5Reader" href="Fast5Reader.html#read5_ont.Fast5Reader.Fast5Reader">Fast5Reader</a></li>
+<li><a title="read5_ont.Pod5Reader.Pod5Reader" href="Pod5Reader.html#read5_ont.Pod5Reader.Pod5Reader">Pod5Reader</a></li>
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="read5.AbstractFileReader.AbstractFileReader.close"><code class="name flex">
-<span>def <span class="ident">close</span></span>(<span>self) -> NoneType</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.close"><code class="name flex">
+<span>def <span class="ident">close</span></span>(<span>self) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Close the raw ONT file</p></div>
@@ -2044,8 +2113,8 @@ class AbstractFileReader():
         self._open = False</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getAsicID"><code class="name flex">
-<span>def <span class="ident">getAsicID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getAsicID"><code class="name flex">
+<span>def <span class="ident">getAsicID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Application Specific Integrated Circuit identifier (ASIC) of the flow cell (unique chip ID, enables tracking of batches of chips).</p>
@@ -2076,8 +2145,8 @@ def getAsicID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getAsicIDEeprom"><code class="name flex">
-<span>def <span class="ident">getAsicIDEeprom</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getAsicIDEeprom"><code class="name flex">
+<span>def <span class="ident">getAsicIDEeprom</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>ID of the ASIC's electrically erasable programmable read-only memory (EEPROM) of the flow cell</p>
@@ -2108,8 +2177,8 @@ def getAsicIDEeprom(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getAsicTemp"><code class="name flex">
-<span>def <span class="ident">getAsicTemp</span></span>(<span>self, readid: str) -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getAsicTemp"><code class="name flex">
+<span>def <span class="ident">getAsicTemp</span></span>(<span>self, readid: str) ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><p>ASIC chip temperature in degrees celsius at start of sequencing</p>
@@ -2140,8 +2209,8 @@ def getAsicTemp(self, readid : str) -&gt; float:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getAsicVersion"><code class="name flex">
-<span>def <span class="ident">getAsicVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getAsicVersion"><code class="name flex">
+<span>def <span class="ident">getAsicVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>ASIC version</p>
@@ -2172,8 +2241,8 @@ def getAsicVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getAutoUpdateSource"><code class="name flex">
-<span>def <span class="ident">getAutoUpdateSource</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getAutoUpdateSource"><code class="name flex">
+<span>def <span class="ident">getAutoUpdateSource</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>URL to MinKNOW update source</p>
@@ -2204,8 +2273,8 @@ def getAutoUpdateSource(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getCalibrationScale"><code class="name flex">
-<span>def <span class="ident">getCalibrationScale</span></span>(<span>self, readid: str) -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getCalibrationScale"><code class="name flex">
+<span>def <span class="ident">getCalibrationScale</span></span>(<span>self, readid: str) ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -2234,8 +2303,8 @@ def getCalibrationScale(self, readid : str) -&gt; float:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getChannelNumber"><code class="name flex">
-<span>def <span class="ident">getChannelNumber</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getChannelNumber"><code class="name flex">
+<span>def <span class="ident">getChannelNumber</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -2264,8 +2333,8 @@ def getChannelNumber(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getConfigurationVersion"><code class="name flex">
-<span>def <span class="ident">getConfigurationVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getConfigurationVersion"><code class="name flex">
+<span>def <span class="ident">getConfigurationVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>MinKNOW configuration version including the experiment scripts</p>
@@ -2296,8 +2365,8 @@ def getConfigurationVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getDeviceID"><code class="name flex">
-<span>def <span class="ident">getDeviceID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getDeviceID"><code class="name flex">
+<span>def <span class="ident">getDeviceID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>MinION ID or GridION/PromethION device position ID</p>
@@ -2328,8 +2397,8 @@ def getDeviceID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getDeviceType"><code class="name flex">
-<span>def <span class="ident">getDeviceType</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getDeviceType"><code class="name flex">
+<span>def <span class="ident">getDeviceType</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Device type: MinION, PromethION or GridION</p>
@@ -2360,8 +2429,8 @@ def getDeviceType(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getDigitisation"><code class="name flex">
-<span>def <span class="ident">getDigitisation</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getDigitisation"><code class="name flex">
+<span>def <span class="ident">getDigitisation</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns read calibration digitisation</p>
@@ -2392,8 +2461,8 @@ def getDigitisation(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getDistributionStatus"><code class="name flex">
-<span>def <span class="ident">getDistributionStatus</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getDistributionStatus"><code class="name flex">
+<span>def <span class="ident">getDistributionStatus</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>stable, dev, alpha or beta</p>
@@ -2424,8 +2493,8 @@ def getDistributionStatus(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getDistributionVersion"><code class="name flex">
-<span>def <span class="ident">getDistributionVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getDistributionVersion"><code class="name flex">
+<span>def <span class="ident">getDistributionVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>MinKNOW version</p>
@@ -2456,8 +2525,8 @@ def getDistributionVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getDuration"><code class="name flex">
-<span>def <span class="ident">getDuration</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getDuration"><code class="name flex">
+<span>def <span class="ident">getDuration</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="returns">Returns</h2>
@@ -2480,12 +2549,12 @@ def getDuration(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getEndReason"><code class="name flex">
-<span>def <span class="ident">getEndReason</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getEndReason"><code class="name flex">
+<span>def <span class="ident">getEndReason</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Available since FAST5 v2.2
-ATTENTION: End Reason encoding differs: fast5/slow5/blow5 vs pod5!</p>
+ATTENTION: End Reason encoding differs: fast5 vs pod5!</p>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><strong><code>end_reason</code></strong> :&ensp;<code>int</code></dt>
@@ -2505,7 +2574,7 @@ ATTENTION: End Reason encoding differs: fast5/slow5/blow5 vs pod5!</p>
 def getEndReason(self, readid : str) -&gt; int:
     &#39;&#39;&#39;
     Available since FAST5 v2.2
-    ATTENTION: End Reason encoding differs: fast5/slow5/blow5 vs pod5!
+    ATTENTION: End Reason encoding differs: fast5 vs pod5!
 
     Returns
     -------
@@ -2521,8 +2590,8 @@ def getEndReason(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getExpScriptName"><code class="name flex">
-<span>def <span class="ident">getExpScriptName</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getExpScriptName"><code class="name flex">
+<span>def <span class="ident">getExpScriptName</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Experiment name with selected kits and parameters in MinKNOW.
@@ -2555,8 +2624,8 @@ def getExpScriptName(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getExpScriptPurpose"><code class="name flex">
-<span>def <span class="ident">getExpScriptPurpose</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getExpScriptPurpose"><code class="name flex">
+<span>def <span class="ident">getExpScriptPurpose</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>The purpose of the run: sequencing run or simulation playback</p>
@@ -2587,8 +2656,8 @@ def getExpScriptPurpose(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getExpStartTime"><code class="name flex">
-<span>def <span class="ident">getExpStartTime</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getExpStartTime"><code class="name flex">
+<span>def <span class="ident">getExpStartTime</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Start time of the sequencing run in ISO 8601 standard</p>
@@ -2619,8 +2688,8 @@ def getExpStartTime(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getExperimentDurationSet"><code class="name flex">
-<span>def <span class="ident">getExperimentDurationSet</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getExperimentDurationSet"><code class="name flex">
+<span>def <span class="ident">getExperimentDurationSet</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Experiment duration set when starting the sequencing run in minutes</p>
@@ -2651,8 +2720,8 @@ def getExperimentDurationSet(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getExperimentType"><code class="name flex">
-<span>def <span class="ident">getExperimentType</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getExperimentType"><code class="name flex">
+<span>def <span class="ident">getExperimentType</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Type of experiment, like DNA or RNA sequencing</p>
@@ -2683,8 +2752,30 @@ def getExperimentType(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getFileVersion"><code class="name flex">
-<span>def <span class="ident">getFileVersion</span></span>(<span>self) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getFilePath"><code class="name flex">
+<span>def <span class="ident">getFilePath</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>filepath</code></strong> :&ensp;<code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getFilePath(self) -&gt; str:
+    &#39;&#39;&#39;
+    Returns
+    -------
+    filepath : str
+    &#39;&#39;&#39;
+    return self._filepath</code></pre>
+</details>
+</dd>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getFileVersion"><code class="name flex">
+<span>def <span class="ident">getFileVersion</span></span>(<span>self) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="returns">Returns</h2>
@@ -2706,8 +2797,8 @@ def getFileVersion(self) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getFlowCellID"><code class="name flex">
-<span>def <span class="ident">getFlowCellID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getFlowCellID"><code class="name flex">
+<span>def <span class="ident">getFlowCellID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Unique flow cell ID</p>
@@ -2738,8 +2829,8 @@ def getFlowCellID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getFlowCellProductCode"><code class="name flex">
-<span>def <span class="ident">getFlowCellProductCode</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getFlowCellProductCode"><code class="name flex">
+<span>def <span class="ident">getFlowCellProductCode</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Product code of the flowcell and pore type</p>
@@ -2770,8 +2861,8 @@ def getFlowCellProductCode(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getGuppyVersion"><code class="name flex">
-<span>def <span class="ident">getGuppyVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getGuppyVersion"><code class="name flex">
+<span>def <span class="ident">getGuppyVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Guppy version used by MinKNOW</p>
@@ -2802,8 +2893,8 @@ def getGuppyVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getHeatSinkTemp"><code class="name flex">
-<span>def <span class="ident">getHeatSinkTemp</span></span>(<span>self, readid: str) -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getHeatSinkTemp"><code class="name flex">
+<span>def <span class="ident">getHeatSinkTemp</span></span>(<span>self, readid: str) ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Start temperature in degress celsius of the ASIC heat sink</p>
@@ -2834,8 +2925,8 @@ def getHeatSinkTemp(self, readid : str) -&gt; float:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getHostProductCode"><code class="name flex">
-<span>def <span class="ident">getHostProductCode</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getHostProductCode"><code class="name flex">
+<span>def <span class="ident">getHostProductCode</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Product code of the host computer</p>
@@ -2866,8 +2957,8 @@ def getHostProductCode(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getHostProductSerialNumber"><code class="name flex">
-<span>def <span class="ident">getHostProductSerialNumber</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getHostProductSerialNumber"><code class="name flex">
+<span>def <span class="ident">getHostProductSerialNumber</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Serial number of the host computer</p>
@@ -2898,8 +2989,8 @@ def getHostProductSerialNumber(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getHostname"><code class="name flex">
-<span>def <span class="ident">getHostname</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getHostname"><code class="name flex">
+<span>def <span class="ident">getHostname</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Computer on which the sequencing run is performed</p>
@@ -2930,8 +3021,8 @@ def getHostname(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getInstallationType"><code class="name flex">
-<span>def <span class="ident">getInstallationType</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getInstallationType"><code class="name flex">
+<span>def <span class="ident">getInstallationType</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>MinKNOW installation type</p>
@@ -2962,8 +3053,8 @@ def getInstallationType(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getLocalFirmwareFile"><code class="name flex">
-<span>def <span class="ident">getLocalFirmwareFile</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getLocalFirmwareFile"><code class="name flex">
+<span>def <span class="ident">getLocalFirmwareFile</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -2991,8 +3082,8 @@ def getLocalFirmwareFile(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getMedianBefore"><code class="name flex">
-<span>def <span class="ident">getMedianBefore</span></span>(<span>self, readid: str) -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getMedianBefore"><code class="name flex">
+<span>def <span class="ident">getMedianBefore</span></span>(<span>self, readid: str) ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Estimated current median preceding the read, can be used as an estimate of the open pore current (no strand inside the pore)</p>
@@ -3017,8 +3108,8 @@ def getMedianBefore(self, readid : str) -&gt; float:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getOffset"><code class="name flex">
-<span>def <span class="ident">getOffset</span></span>(<span>self, readid: str) -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getOffset"><code class="name flex">
+<span>def <span class="ident">getOffset</span></span>(<span>self, readid: str) ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3046,8 +3137,8 @@ def getOffset(self, readid : str) -&gt; float:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getOperatingSystem"><code class="name flex">
-<span>def <span class="ident">getOperatingSystem</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getOperatingSystem"><code class="name flex">
+<span>def <span class="ident">getOperatingSystem</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Operating system of the host computer</p>
@@ -3078,8 +3169,8 @@ def getOperatingSystem(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getPackage"><code class="name flex">
-<span>def <span class="ident">getPackage</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getPackage"><code class="name flex">
+<span>def <span class="ident">getPackage</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Bream package used during sequencing</p>
@@ -3110,8 +3201,8 @@ def getPackage(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getPackageVersion"><code class="name flex">
-<span>def <span class="ident">getPackageVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getPackageVersion"><code class="name flex">
+<span>def <span class="ident">getPackageVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Bream package version</p>
@@ -3142,8 +3233,57 @@ def getPackageVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getPoreType"><code class="name flex">
-<span>def <span class="ident">getPoreType</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getPolyAStandardizedSignal"><code class="name flex">
+<span>def <span class="ident">getPolyAStandardizedSignal</span></span>(<span>self, readid: str, polyAstart: int, polyAend: int) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Standardize the read signal of the provided read with the polyA.
+This function uses the median and mad to standardize the read with the polyA signal.
+After standardization the polyA signal will have a mean of 108.901413 and a stdev of 2.676522.</p>
+<h2 id="parameter">Parameter</h2>
+<p>readid : str
+polyAstart : int
+included starting index of the polyA signal in the read
+polyAend : int
+excluded ending index of the polyA signal in the read</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>standardizedSignal</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>polyA standardized read signal</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getPolyAStandardizedSignal(self, readid : str, polyAstart : int, polyAend : int) -&gt; np.ndarray:
+    &#39;&#39;&#39;
+    Standardize the read signal of the provided read with the polyA.
+    This function uses the median and mad to standardize the read with the polyA signal.
+    After standardization the polyA signal will have a mean of 108.901413 and a stdev of 2.676522.
+    
+    Parameter
+    ---------
+    readid : str
+    polyAstart : int
+        included starting index of the polyA signal in the read
+    polyAend : int
+        excluded ending index of the polyA signal in the read
+
+    Returns
+    -------
+    standardizedSignal : np.ndarray
+        polyA standardized read signal
+    &#39;&#39;&#39;
+    stdPolyAMean = 108.901413
+    stdPolyAStdev = 2.676522
+    polyAsignal = self.getpASignal(readid)[polyAstart : polyAend]
+    polyAmedian = np.median(polyAsignal)
+    polyAmad = 1.4826 * np.median(np.abs(polyAsignal - polyAmedian))
+    return ((self.getpASignal(readid) - polyAmedian) / polyAmad) * stdPolyAStdev + stdPolyAMean</code></pre>
+</details>
+</dd>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getPoreType"><code class="name flex">
+<span>def <span class="ident">getPoreType</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3172,8 +3312,8 @@ def getPoreType(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getProtocolGroupID"><code class="name flex">
-<span>def <span class="ident">getProtocolGroupID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolGroupID"><code class="name flex">
+<span>def <span class="ident">getProtocolGroupID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Unique acquisition period ID set by the user, also called 'group id'</p>
@@ -3204,8 +3344,8 @@ def getProtocolGroupID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getProtocolRunID"><code class="name flex">
-<span>def <span class="ident">getProtocolRunID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolRunID"><code class="name flex">
+<span>def <span class="ident">getProtocolRunID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Experiment run ID</p>
@@ -3236,8 +3376,8 @@ def getProtocolRunID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getProtocolStartTime"><code class="name flex">
-<span>def <span class="ident">getProtocolStartTime</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolStartTime"><code class="name flex">
+<span>def <span class="ident">getProtocolStartTime</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Data acquisition period start time</p>
@@ -3268,8 +3408,8 @@ def getProtocolStartTime(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getProtocolVersion"><code class="name flex">
-<span>def <span class="ident">getProtocolVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolVersion"><code class="name flex">
+<span>def <span class="ident">getProtocolVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Protocol version (barcoding, kits, etc)</p>
@@ -3300,8 +3440,8 @@ def getProtocolVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getRange"><code class="name flex">
-<span>def <span class="ident">getRange</span></span>(<span>self, readid: str) -> numpy.ndarray</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getRange"><code class="name flex">
+<span>def <span class="ident">getRange</span></span>(<span>self, readid: str) ‑> numpy.ndarray</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns read calibration range</p>
@@ -3332,8 +3472,8 @@ def getRange(self, readid : str) -&gt; np.ndarray:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getReadNumber"><code class="name flex">
-<span>def <span class="ident">getReadNumber</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getReadNumber"><code class="name flex">
+<span>def <span class="ident">getReadNumber</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3361,8 +3501,8 @@ def getReadNumber(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getReads"><code class="name flex">
-<span>def <span class="ident">getReads</span></span>(<span>self) -> list</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getReads"><code class="name flex">
+<span>def <span class="ident">getReads</span></span>(<span>self) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="returns">Returns</h2>
@@ -3384,8 +3524,8 @@ def getReadNumber(self, readid : str) -&gt; int:
     return self._reads</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getRunID"><code class="name flex">
-<span>def <span class="ident">getRunID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getRunID"><code class="name flex">
+<span>def <span class="ident">getRunID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3413,8 +3553,8 @@ def getRunID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getSampleID"><code class="name flex">
-<span>def <span class="ident">getSampleID</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getSampleID"><code class="name flex">
+<span>def <span class="ident">getSampleID</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Custom user given sample ID</p>
@@ -3445,8 +3585,8 @@ def getSampleID(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getSamplingRate"><code class="name flex">
-<span>def <span class="ident">getSamplingRate</span></span>(<span>self, readid) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getSamplingRate"><code class="name flex">
+<span>def <span class="ident">getSamplingRate</span></span>(<span>self, readid) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Measuring rate of the sensor during sequencing in Hz</p>
@@ -3478,8 +3618,8 @@ def getSamplingRate(self, readid) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getScale"><code class="name flex">
-<span>def <span class="ident">getScale</span></span>(<span>self, readid: str, mode: str = 'median') -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getScale"><code class="name flex">
+<span>def <span class="ident">getScale</span></span>(<span>self, readid: str, mode: str = 'median') ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3517,8 +3657,8 @@ mode : str
         raise UnknownNormalizationMode</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getSequencingKit"><code class="name flex">
-<span>def <span class="ident">getSequencingKit</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getSequencingKit"><code class="name flex">
+<span>def <span class="ident">getSequencingKit</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Sequencing kit selected by the user</p>
@@ -3549,8 +3689,8 @@ def getSequencingKit(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getShift"><code class="name flex">
-<span>def <span class="ident">getShift</span></span>(<span>self, readid: str, mode: str = 'median') -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getShift"><code class="name flex">
+<span>def <span class="ident">getShift</span></span>(<span>self, readid: str, mode: str = 'median') ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3588,8 +3728,8 @@ mode : str
         raise UnknownNormalizationMode</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getSignal"><code class="name flex">
-<span>def <span class="ident">getSignal</span></span>(<span>self, readid: str) -> numpy.ndarray</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getSignal"><code class="name flex">
+<span>def <span class="ident">getSignal</span></span>(<span>self, readid: str) ‑> numpy.ndarray</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3618,8 +3758,8 @@ def getSignal(self, readid : str) -&gt; np.ndarray:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getStartTime"><code class="name flex">
-<span>def <span class="ident">getStartTime</span></span>(<span>self, readid: str) -> int</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getStartTime"><code class="name flex">
+<span>def <span class="ident">getStartTime</span></span>(<span>self, readid: str) ‑> int</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Sample number of the sequencing start of the provided read.
@@ -3653,8 +3793,8 @@ def getStartTime(self, readid : str) -&gt; int:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getStartTimeInMinutes"><code class="name flex">
-<span>def <span class="ident">getStartTimeInMinutes</span></span>(<span>self, readid) -> float</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getStartTimeInMinutes"><code class="name flex">
+<span>def <span class="ident">getStartTimeInMinutes</span></span>(<span>self, readid) ‑> float</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3682,8 +3822,8 @@ def getStartTime(self, readid : str) -&gt; int:
     return self.getStartTime(readid) / self.getSamplingRate(readid) / 60</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getUSBConfig"><code class="name flex">
-<span>def <span class="ident">getUSBConfig</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getUSBConfig"><code class="name flex">
+<span>def <span class="ident">getUSBConfig</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Flow cell and host computer connection information</p>
@@ -3714,8 +3854,8 @@ def getUSBConfig(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getVersion"><code class="name flex">
-<span>def <span class="ident">getVersion</span></span>(<span>self, readid: str) -> str</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getVersion"><code class="name flex">
+<span>def <span class="ident">getVersion</span></span>(<span>self, readid: str) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>MinKNOW version</p>
@@ -3746,8 +3886,8 @@ def getVersion(self, readid : str) -&gt; str:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getZNormSignal"><code class="name flex">
-<span>def <span class="ident">getZNormSignal</span></span>(<span>self, readid: str, mode: str = 'median') -> numpy.ndarray</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getZNormSignal"><code class="name flex">
+<span>def <span class="ident">getZNormSignal</span></span>(<span>self, readid: str, mode: str = 'median') ‑> numpy.ndarray</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Normalize the read signal of the provided read</p>
@@ -3784,8 +3924,8 @@ mode : str
     return (self.getpASignal(readid) - self.getShift(readid, mode)) / self.getScale(readid, mode)</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.getpASignal"><code class="name flex">
-<span>def <span class="ident">getpASignal</span></span>(<span>self, readid: str) -> numpy.ndarray</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.getpASignal"><code class="name flex">
+<span>def <span class="ident">getpASignal</span></span>(<span>self, readid: str) ‑> numpy.ndarray</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="parameter">Parameter</h2>
@@ -3813,8 +3953,8 @@ def getpASignal(self, readid :str) -&gt; np.ndarray:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.isAutoUpdated"><code class="name flex">
-<span>def <span class="ident">isAutoUpdated</span></span>(<span>self, readid: str) -> bool</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.isAutoUpdated"><code class="name flex">
+<span>def <span class="ident">isAutoUpdated</span></span>(<span>self, readid: str) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Auto update in MinKNOW</p>
@@ -3845,8 +3985,8 @@ def isAutoUpdated(self, readid : str) -&gt; bool:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.isBarcodingEnabled"><code class="name flex">
-<span>def <span class="ident">isBarcodingEnabled</span></span>(<span>self, readid: str) -> bool</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.isBarcodingEnabled"><code class="name flex">
+<span>def <span class="ident">isBarcodingEnabled</span></span>(<span>self, readid: str) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Whether barcoding is enabled or not</p>
@@ -3877,8 +4017,8 @@ def isBarcodingEnabled(self, readid : str) -&gt; bool:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.isBreamStandard"><code class="name flex">
-<span>def <span class="ident">isBreamStandard</span></span>(<span>self, readid: str) -> bool</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.isBreamStandard"><code class="name flex">
+<span>def <span class="ident">isBreamStandard</span></span>(<span>self, readid: str) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Bream is a sequencing controlling software</p>
@@ -3909,8 +4049,8 @@ def isBreamStandard(self, readid : str) -&gt; bool:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.isLocalBasecalled"><code class="name flex">
-<span>def <span class="ident">isLocalBasecalled</span></span>(<span>self, readid: str) -> bool</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.isLocalBasecalled"><code class="name flex">
+<span>def <span class="ident">isLocalBasecalled</span></span>(<span>self, readid: str) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Type of experiment, like DNA or RNA sequencing</p>
@@ -3941,8 +4081,8 @@ def isLocalBasecalled(self, readid : str) -&gt; bool:
     pass</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.isOpen"><code class="name flex">
-<span>def <span class="ident">isOpen</span></span>(<span>self) -> bool</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.isOpen"><code class="name flex">
+<span>def <span class="ident">isOpen</span></span>(<span>self) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"><h2 id="returns">Returns</h2>
@@ -3964,8 +4104,8 @@ def isLocalBasecalled(self, readid : str) -&gt; bool:
     return self._open</code></pre>
 </details>
 </dd>
-<dt id="read5.AbstractFileReader.AbstractFileReader.open"><code class="name flex">
-<span>def <span class="ident">open</span></span>(<span>self) -> NoneType</span>
+<dt id="read5_ont.AbstractFileReader.AbstractFileReader.open"><code class="name flex">
+<span>def <span class="ident">open</span></span>(<span>self) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Opens and loads the reads of the raw ONT file.</p></div>
@@ -3994,77 +4134,79 @@ def open(self) -&gt; None:
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="read5" href="index.html">read5</a></code></li>
+<li><code><a title="read5_ont" href="index.html">read5_ont</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="read5.AbstractFileReader.AbstractFileReader" href="#read5.AbstractFileReader.AbstractFileReader">AbstractFileReader</a></code></h4>
+<h4><code><a title="read5_ont.AbstractFileReader.AbstractFileReader" href="#read5_ont.AbstractFileReader.AbstractFileReader">AbstractFileReader</a></code></h4>
 <ul class="">
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.close" href="#read5.AbstractFileReader.AbstractFileReader.close">close</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getAsicID" href="#read5.AbstractFileReader.AbstractFileReader.getAsicID">getAsicID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getAsicIDEeprom" href="#read5.AbstractFileReader.AbstractFileReader.getAsicIDEeprom">getAsicIDEeprom</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getAsicTemp" href="#read5.AbstractFileReader.AbstractFileReader.getAsicTemp">getAsicTemp</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getAsicVersion" href="#read5.AbstractFileReader.AbstractFileReader.getAsicVersion">getAsicVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getAutoUpdateSource" href="#read5.AbstractFileReader.AbstractFileReader.getAutoUpdateSource">getAutoUpdateSource</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getCalibrationScale" href="#read5.AbstractFileReader.AbstractFileReader.getCalibrationScale">getCalibrationScale</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getChannelNumber" href="#read5.AbstractFileReader.AbstractFileReader.getChannelNumber">getChannelNumber</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getConfigurationVersion" href="#read5.AbstractFileReader.AbstractFileReader.getConfigurationVersion">getConfigurationVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getDeviceID" href="#read5.AbstractFileReader.AbstractFileReader.getDeviceID">getDeviceID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getDeviceType" href="#read5.AbstractFileReader.AbstractFileReader.getDeviceType">getDeviceType</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getDigitisation" href="#read5.AbstractFileReader.AbstractFileReader.getDigitisation">getDigitisation</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getDistributionStatus" href="#read5.AbstractFileReader.AbstractFileReader.getDistributionStatus">getDistributionStatus</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getDistributionVersion" href="#read5.AbstractFileReader.AbstractFileReader.getDistributionVersion">getDistributionVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getDuration" href="#read5.AbstractFileReader.AbstractFileReader.getDuration">getDuration</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getEndReason" href="#read5.AbstractFileReader.AbstractFileReader.getEndReason">getEndReason</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getExpScriptName" href="#read5.AbstractFileReader.AbstractFileReader.getExpScriptName">getExpScriptName</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getExpScriptPurpose" href="#read5.AbstractFileReader.AbstractFileReader.getExpScriptPurpose">getExpScriptPurpose</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getExpStartTime" href="#read5.AbstractFileReader.AbstractFileReader.getExpStartTime">getExpStartTime</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getExperimentDurationSet" href="#read5.AbstractFileReader.AbstractFileReader.getExperimentDurationSet">getExperimentDurationSet</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getExperimentType" href="#read5.AbstractFileReader.AbstractFileReader.getExperimentType">getExperimentType</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getFileVersion" href="#read5.AbstractFileReader.AbstractFileReader.getFileVersion">getFileVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getFlowCellID" href="#read5.AbstractFileReader.AbstractFileReader.getFlowCellID">getFlowCellID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getFlowCellProductCode" href="#read5.AbstractFileReader.AbstractFileReader.getFlowCellProductCode">getFlowCellProductCode</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getGuppyVersion" href="#read5.AbstractFileReader.AbstractFileReader.getGuppyVersion">getGuppyVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getHeatSinkTemp" href="#read5.AbstractFileReader.AbstractFileReader.getHeatSinkTemp">getHeatSinkTemp</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getHostProductCode" href="#read5.AbstractFileReader.AbstractFileReader.getHostProductCode">getHostProductCode</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getHostProductSerialNumber" href="#read5.AbstractFileReader.AbstractFileReader.getHostProductSerialNumber">getHostProductSerialNumber</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getHostname" href="#read5.AbstractFileReader.AbstractFileReader.getHostname">getHostname</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getInstallationType" href="#read5.AbstractFileReader.AbstractFileReader.getInstallationType">getInstallationType</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getLocalFirmwareFile" href="#read5.AbstractFileReader.AbstractFileReader.getLocalFirmwareFile">getLocalFirmwareFile</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getMedianBefore" href="#read5.AbstractFileReader.AbstractFileReader.getMedianBefore">getMedianBefore</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getOffset" href="#read5.AbstractFileReader.AbstractFileReader.getOffset">getOffset</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getOperatingSystem" href="#read5.AbstractFileReader.AbstractFileReader.getOperatingSystem">getOperatingSystem</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getPackage" href="#read5.AbstractFileReader.AbstractFileReader.getPackage">getPackage</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getPackageVersion" href="#read5.AbstractFileReader.AbstractFileReader.getPackageVersion">getPackageVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getPoreType" href="#read5.AbstractFileReader.AbstractFileReader.getPoreType">getPoreType</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getProtocolGroupID" href="#read5.AbstractFileReader.AbstractFileReader.getProtocolGroupID">getProtocolGroupID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getProtocolRunID" href="#read5.AbstractFileReader.AbstractFileReader.getProtocolRunID">getProtocolRunID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getProtocolStartTime" href="#read5.AbstractFileReader.AbstractFileReader.getProtocolStartTime">getProtocolStartTime</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getProtocolVersion" href="#read5.AbstractFileReader.AbstractFileReader.getProtocolVersion">getProtocolVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getRange" href="#read5.AbstractFileReader.AbstractFileReader.getRange">getRange</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getReadNumber" href="#read5.AbstractFileReader.AbstractFileReader.getReadNumber">getReadNumber</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getReads" href="#read5.AbstractFileReader.AbstractFileReader.getReads">getReads</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getRunID" href="#read5.AbstractFileReader.AbstractFileReader.getRunID">getRunID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getSampleID" href="#read5.AbstractFileReader.AbstractFileReader.getSampleID">getSampleID</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getSamplingRate" href="#read5.AbstractFileReader.AbstractFileReader.getSamplingRate">getSamplingRate</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getScale" href="#read5.AbstractFileReader.AbstractFileReader.getScale">getScale</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getSequencingKit" href="#read5.AbstractFileReader.AbstractFileReader.getSequencingKit">getSequencingKit</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getShift" href="#read5.AbstractFileReader.AbstractFileReader.getShift">getShift</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getSignal" href="#read5.AbstractFileReader.AbstractFileReader.getSignal">getSignal</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getStartTime" href="#read5.AbstractFileReader.AbstractFileReader.getStartTime">getStartTime</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getStartTimeInMinutes" href="#read5.AbstractFileReader.AbstractFileReader.getStartTimeInMinutes">getStartTimeInMinutes</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getUSBConfig" href="#read5.AbstractFileReader.AbstractFileReader.getUSBConfig">getUSBConfig</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getVersion" href="#read5.AbstractFileReader.AbstractFileReader.getVersion">getVersion</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getZNormSignal" href="#read5.AbstractFileReader.AbstractFileReader.getZNormSignal">getZNormSignal</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.getpASignal" href="#read5.AbstractFileReader.AbstractFileReader.getpASignal">getpASignal</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.isAutoUpdated" href="#read5.AbstractFileReader.AbstractFileReader.isAutoUpdated">isAutoUpdated</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.isBarcodingEnabled" href="#read5.AbstractFileReader.AbstractFileReader.isBarcodingEnabled">isBarcodingEnabled</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.isBreamStandard" href="#read5.AbstractFileReader.AbstractFileReader.isBreamStandard">isBreamStandard</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.isLocalBasecalled" href="#read5.AbstractFileReader.AbstractFileReader.isLocalBasecalled">isLocalBasecalled</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.isOpen" href="#read5.AbstractFileReader.AbstractFileReader.isOpen">isOpen</a></code></li>
-<li><code><a title="read5.AbstractFileReader.AbstractFileReader.open" href="#read5.AbstractFileReader.AbstractFileReader.open">open</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.close" href="#read5_ont.AbstractFileReader.AbstractFileReader.close">close</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getAsicID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getAsicID">getAsicID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getAsicIDEeprom" href="#read5_ont.AbstractFileReader.AbstractFileReader.getAsicIDEeprom">getAsicIDEeprom</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getAsicTemp" href="#read5_ont.AbstractFileReader.AbstractFileReader.getAsicTemp">getAsicTemp</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getAsicVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getAsicVersion">getAsicVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getAutoUpdateSource" href="#read5_ont.AbstractFileReader.AbstractFileReader.getAutoUpdateSource">getAutoUpdateSource</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getCalibrationScale" href="#read5_ont.AbstractFileReader.AbstractFileReader.getCalibrationScale">getCalibrationScale</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getChannelNumber" href="#read5_ont.AbstractFileReader.AbstractFileReader.getChannelNumber">getChannelNumber</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getConfigurationVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getConfigurationVersion">getConfigurationVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getDeviceID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getDeviceID">getDeviceID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getDeviceType" href="#read5_ont.AbstractFileReader.AbstractFileReader.getDeviceType">getDeviceType</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getDigitisation" href="#read5_ont.AbstractFileReader.AbstractFileReader.getDigitisation">getDigitisation</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getDistributionStatus" href="#read5_ont.AbstractFileReader.AbstractFileReader.getDistributionStatus">getDistributionStatus</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getDistributionVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getDistributionVersion">getDistributionVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getDuration" href="#read5_ont.AbstractFileReader.AbstractFileReader.getDuration">getDuration</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getEndReason" href="#read5_ont.AbstractFileReader.AbstractFileReader.getEndReason">getEndReason</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getExpScriptName" href="#read5_ont.AbstractFileReader.AbstractFileReader.getExpScriptName">getExpScriptName</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getExpScriptPurpose" href="#read5_ont.AbstractFileReader.AbstractFileReader.getExpScriptPurpose">getExpScriptPurpose</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getExpStartTime" href="#read5_ont.AbstractFileReader.AbstractFileReader.getExpStartTime">getExpStartTime</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getExperimentDurationSet" href="#read5_ont.AbstractFileReader.AbstractFileReader.getExperimentDurationSet">getExperimentDurationSet</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getExperimentType" href="#read5_ont.AbstractFileReader.AbstractFileReader.getExperimentType">getExperimentType</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getFilePath" href="#read5_ont.AbstractFileReader.AbstractFileReader.getFilePath">getFilePath</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getFileVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getFileVersion">getFileVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getFlowCellID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getFlowCellID">getFlowCellID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getFlowCellProductCode" href="#read5_ont.AbstractFileReader.AbstractFileReader.getFlowCellProductCode">getFlowCellProductCode</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getGuppyVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getGuppyVersion">getGuppyVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getHeatSinkTemp" href="#read5_ont.AbstractFileReader.AbstractFileReader.getHeatSinkTemp">getHeatSinkTemp</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getHostProductCode" href="#read5_ont.AbstractFileReader.AbstractFileReader.getHostProductCode">getHostProductCode</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getHostProductSerialNumber" href="#read5_ont.AbstractFileReader.AbstractFileReader.getHostProductSerialNumber">getHostProductSerialNumber</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getHostname" href="#read5_ont.AbstractFileReader.AbstractFileReader.getHostname">getHostname</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getInstallationType" href="#read5_ont.AbstractFileReader.AbstractFileReader.getInstallationType">getInstallationType</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getLocalFirmwareFile" href="#read5_ont.AbstractFileReader.AbstractFileReader.getLocalFirmwareFile">getLocalFirmwareFile</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getMedianBefore" href="#read5_ont.AbstractFileReader.AbstractFileReader.getMedianBefore">getMedianBefore</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getOffset" href="#read5_ont.AbstractFileReader.AbstractFileReader.getOffset">getOffset</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getOperatingSystem" href="#read5_ont.AbstractFileReader.AbstractFileReader.getOperatingSystem">getOperatingSystem</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getPackage" href="#read5_ont.AbstractFileReader.AbstractFileReader.getPackage">getPackage</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getPackageVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getPackageVersion">getPackageVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getPolyAStandardizedSignal" href="#read5_ont.AbstractFileReader.AbstractFileReader.getPolyAStandardizedSignal">getPolyAStandardizedSignal</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getPoreType" href="#read5_ont.AbstractFileReader.AbstractFileReader.getPoreType">getPoreType</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolGroupID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getProtocolGroupID">getProtocolGroupID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolRunID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getProtocolRunID">getProtocolRunID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolStartTime" href="#read5_ont.AbstractFileReader.AbstractFileReader.getProtocolStartTime">getProtocolStartTime</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getProtocolVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getProtocolVersion">getProtocolVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getRange" href="#read5_ont.AbstractFileReader.AbstractFileReader.getRange">getRange</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getReadNumber" href="#read5_ont.AbstractFileReader.AbstractFileReader.getReadNumber">getReadNumber</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getReads" href="#read5_ont.AbstractFileReader.AbstractFileReader.getReads">getReads</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getRunID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getRunID">getRunID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getSampleID" href="#read5_ont.AbstractFileReader.AbstractFileReader.getSampleID">getSampleID</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getSamplingRate" href="#read5_ont.AbstractFileReader.AbstractFileReader.getSamplingRate">getSamplingRate</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getScale" href="#read5_ont.AbstractFileReader.AbstractFileReader.getScale">getScale</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getSequencingKit" href="#read5_ont.AbstractFileReader.AbstractFileReader.getSequencingKit">getSequencingKit</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getShift" href="#read5_ont.AbstractFileReader.AbstractFileReader.getShift">getShift</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getSignal" href="#read5_ont.AbstractFileReader.AbstractFileReader.getSignal">getSignal</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getStartTime" href="#read5_ont.AbstractFileReader.AbstractFileReader.getStartTime">getStartTime</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getStartTimeInMinutes" href="#read5_ont.AbstractFileReader.AbstractFileReader.getStartTimeInMinutes">getStartTimeInMinutes</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getUSBConfig" href="#read5_ont.AbstractFileReader.AbstractFileReader.getUSBConfig">getUSBConfig</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getVersion" href="#read5_ont.AbstractFileReader.AbstractFileReader.getVersion">getVersion</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getZNormSignal" href="#read5_ont.AbstractFileReader.AbstractFileReader.getZNormSignal">getZNormSignal</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.getpASignal" href="#read5_ont.AbstractFileReader.AbstractFileReader.getpASignal">getpASignal</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.isAutoUpdated" href="#read5_ont.AbstractFileReader.AbstractFileReader.isAutoUpdated">isAutoUpdated</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.isBarcodingEnabled" href="#read5_ont.AbstractFileReader.AbstractFileReader.isBarcodingEnabled">isBarcodingEnabled</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.isBreamStandard" href="#read5_ont.AbstractFileReader.AbstractFileReader.isBreamStandard">isBreamStandard</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.isLocalBasecalled" href="#read5_ont.AbstractFileReader.AbstractFileReader.isLocalBasecalled">isLocalBasecalled</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.isOpen" href="#read5_ont.AbstractFileReader.AbstractFileReader.isOpen">isOpen</a></code></li>
+<li><code><a title="read5_ont.AbstractFileReader.AbstractFileReader.open" href="#read5_ont.AbstractFileReader.AbstractFileReader.open">open</a></code></li>
 </ul>
 </li>
 </ul>
@@ -4073,9 +4215,7 @@ def open(self) -&gt; None:
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.1</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad()</script>
 </body>
 </html>
