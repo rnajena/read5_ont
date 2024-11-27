@@ -16,8 +16,8 @@ requirements:
     - pip
   run:
     - python
-    - numpy >=1.20.0 # [py<=3.12]
-    - numpy >=2.0.0 # [py>3.12]
+    - numpy >=1.20.0 # [py<=312]
+    - numpy >=2.0.0 # [py>312]
     - h5py >=3.8.0
     - ont_vbz_hdf_plugin >=1.0.0
     - pod5 >=0.3.23
