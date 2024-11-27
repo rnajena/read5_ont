@@ -5,7 +5,7 @@ requirements = [
     'h5py>=3.0',
     'vbz-h5py-plugin>=1.0',
     'numpy>=1.20',
-    'pod5>=0.2.3',
+    'pod5>=0.3.23',
 ]
 
 with open("README.rst", "r") as rst:
@@ -31,10 +31,7 @@ setup(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3'
         'Topic :: Scientific/Engineering :: Bio-Informatics',
     ]
 )
