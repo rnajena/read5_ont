@@ -11,6 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -v .
+  number : 0
 
 requirements:
   host:
@@ -33,7 +34,6 @@ test:
     - {{ dep.lower() }}
     {% endfor %}
   commands:
-    - export HDF5_PLUGIN_PATH=$(python -c "import vbz_h5py_plugin; print(vbz_h5py_plugin.__path__[0] + '/lib')")
     - pytest
 
 about:
