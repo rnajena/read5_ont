@@ -20,7 +20,7 @@ classifiers = [
 ]
 dependencies = [
   "h5py>=3.0",
-  "vbz-h5py-plugin>=1.0",
+  "vbz-h5py-plugin>=1.0.1",
   "numpy>=1.20",
   "pod5>=0.3.23",
 ]
