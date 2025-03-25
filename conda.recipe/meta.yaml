@@ -16,8 +16,6 @@ requirements:
   host:
     - python
     - pip
-    - h5py
-    - vbz-h5py-plugin
     {% for dep in pyproject['build-system']['requires'] %}
     - {{ dep.lower() }}
     {% endfor %}
@@ -31,9 +29,14 @@ test:
   source_files:
     - tests
   requires:
-    - pytest
+    {% for dep in project['optional-dependencies']['test'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
+    {% for dep in project['dependencies'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
   commands:
-    - export HDF5_PLUGIN_PATH=$CONDA_PREFIX/lib/hdf5/plugin
+    # - export HDF5_PLUGIN_PATH=$CONDA_PREFIX/lib/hdf5/plugin
     - pytest
 
 about:
