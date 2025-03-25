@@ -32,11 +32,8 @@ test:
     {% for dep in project['optional-dependencies']['test'] %}
     - {{ dep.lower() }}
     {% endfor %}
-    {% for dep in project['dependencies'] %}
-    - {{ dep.lower() }}
-    {% endfor %}
   commands:
-    # - export HDF5_PLUGIN_PATH=$CONDA_PREFIX/lib/hdf5/plugin
+    - export HDF5_PLUGIN_PATH=$(python -c "import vbz_h5py_plugin; print(vbz_h5py_plugin.__path__[0] + '/lib')")
     - pytest
 
 about:
