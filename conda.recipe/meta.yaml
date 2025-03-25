@@ -29,14 +29,10 @@ test:
   source_files:
     - tests
   requires:
-    {% for dep in project['optional-dependencies']['test'] %}
-    - {{ dep.lower() }}
-    {% endfor %}
-    {% for dep in project['dependencies'] %}
-    - {{ dep.lower() }}
-    {% endfor %}
+    - pytest
   commands:
-    - python -m pytest
+    - export HDF5_PLUGIN_PATH=$CONDA_PREFIX/lib/hdf5/plugin
+    - pytest
 
 about:
   home: {{ project['urls']['repository'] }}
