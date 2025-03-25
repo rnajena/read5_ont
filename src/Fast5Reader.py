@@ -4,7 +4,7 @@
 # github: https://github.com/JannesSP
 # website: https://jannessp.github.io
 
-from read5_ont.AbstractFileReader import AbstractFileReader
+from src.AbstractFileReader import AbstractFileReader
 import h5py
 import numpy as np
 
