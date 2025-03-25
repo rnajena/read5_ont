@@ -36,7 +36,7 @@ test:
     - {{ dep.lower() }}
     {% endfor %}
   commands:
-    - pytest
+    - python -m pytest
 
 about:
   home: {{ project['urls']['repository'] }}
