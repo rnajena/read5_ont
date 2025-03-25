@@ -57,7 +57,7 @@ omit = [
 universal = true
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/pytn/_version.py"
+version-file = "src/_version.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
