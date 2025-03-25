@@ -49,7 +49,7 @@ exclude_lines = [
   'if __name__ == "__main__":'
 ]
 omit = [
-  "src/_version.py",
+  "read5_ont/_version.py",
   "tests/*"
 ]
 
@@ -57,14 +57,14 @@ omit = [
 universal = true
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/_version.py"
+version-file = "read5_ont/_version.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["read5_ont"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "src",
+  "read5_ont",
   "pyproject.toml",
   "README.rst",
   "LICENSE"
@@ -75,7 +75,7 @@ source = "vcs"
 
 [tool.mypy]
 disallow_untyped_defs = true
-files = ["src/**/*.py"]
+files = ["read5_ont/**/*.py"]
 python_version = "3.10"
 warn_no_return = true
 
@@ -86,7 +86,7 @@ addopts = [
   "--cov-append",
   "--cov-branch",
   "--cov-report=term-missing",
-  "--cov=src",
+  "--cov=read5_ont",
   "--tb=native",
   "--strict-markers",
   "--durations=20"
