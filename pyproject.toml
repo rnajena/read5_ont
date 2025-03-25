@@ -86,7 +86,7 @@ addopts = [
   "--cov-append",
   "--cov-branch",
   "--cov-report=term-missing",
-  "--cov=src/python",
+  "--cov=src",
   "--tb=native",
   "--strict-markers",
   "--durations=20"
