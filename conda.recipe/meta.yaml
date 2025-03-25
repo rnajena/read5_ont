@@ -16,6 +16,8 @@ requirements:
   host:
     - python
     - pip
+    - h5py
+    - vbz-h5py-plugin
     {% for dep in pyproject['build-system']['requires'] %}
     - {{ dep.lower() }}
     {% endfor %}
