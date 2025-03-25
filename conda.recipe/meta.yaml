@@ -32,6 +32,9 @@ test:
     {% for dep in project['optional-dependencies']['test'] %}
     - {{ dep.lower() }}
     {% endfor %}
+    {% for dep in project['dependencies'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
   commands:
     - pytest
 
