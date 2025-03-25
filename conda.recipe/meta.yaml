@@ -29,7 +29,9 @@ test:
   source_files:
     - tests
   requires:
-    - pytest
+    {% for dep in project['optional-dependencies']['test'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
   commands:
     - pytest
 
