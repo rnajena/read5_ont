@@ -29,7 +29,7 @@ pip install read5_ont
 Pod5 is now available via [conda](https://anaconda.org/jannessp/pod5) (19.07.2023).
 
 ```bash
-mamba create -n read5_ont -c jannessp read5_ont
+conda create -n read5_ont -c jannessp read5_ont
 conda activate read5_ont
 ```
 ___
@@ -37,14 +37,16 @@ ___
 
 [Click here to see a full documentation about the classes and function.](https://jannessp.github.io/read5.github.io/)
 
-*my_file* can be a fast5, slow5, blow5 or pod5 file. The wrapper detects the file format depending on the file extension.
+*my_file* can be a fast5 or pod5 file. The wrapper detects the file format depending on the file extension.
+
+<span style="color:red">You might encounter errors with python 3.13. AFAIK there is some dependency problem with pyarrow and other libraries for python 3.13, but I could not fix it.</span>.
 
 ### Small example:
 
 ```python
 from read5 import read # or from read5.Reader import read
 
-r5 = read(my_file) # file with on of these extensions: .fast5, .slow5, .blow5, .pod5
+r5 = read(my_file) # file with on of these extensions: .fast5, .pod5
 for readid in r5:
     signal = r5.getSignal(readid) # returns raw integer values stored in the file
     pA_signal = r5.getpASignal(readid) # returns pA signal
